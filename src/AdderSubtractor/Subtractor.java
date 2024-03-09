@@ -10,7 +10,7 @@ public class Subtractor implements Callable<Void> {
     }
     @Override
     public Void call() throws Exception {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100000; i++) {
             this.v.i -= 1;
         }
         return null;

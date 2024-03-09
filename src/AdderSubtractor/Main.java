@@ -21,6 +21,9 @@ public class Main {
 
         f1.get();
         f2.get();
+
+        // The expected value is 0, but because of large loop values, we get different values
+        // This shows the problems in threads and the need for synchronization
         System.out.println("Final Value: " + v.i);
 
     }
