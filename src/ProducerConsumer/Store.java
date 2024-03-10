@@ -1,15 +1,16 @@
 package ProducerConsumer;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Deque;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class Store {
     private int maxShelves;
-    private List<Object> items;
+    private Deque<Object> items;
 
     Store(int shelves) {
         this.maxShelves = shelves;
-        items = new ArrayList<>();
+        items = new ConcurrentLinkedDeque<>();
     }
 
     public int getMaxShelves() {
@@ -20,7 +21,7 @@ public class Store {
         this.maxShelves = maxShelves;
     }
 
-    public List<Object> getItems() {
+    public Deque<Object> getItems() {
         return items;
     }
 
@@ -30,7 +31,7 @@ public class Store {
     }
 
     public void removeItems() {
-        items.remove(items.size() - 1);
+        items.remove();
         System.out.println("Item removed by Consumer. Shelf size: " + items.size());
     }
 
