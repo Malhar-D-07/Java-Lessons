@@ -18,6 +18,7 @@ public class Producer implements Runnable{
         while(true) {
             try {
                 producerSema.acquire();
+                Thread.sleep(200);
             }
             catch (InterruptedException e) {
                 throw new RuntimeException();
