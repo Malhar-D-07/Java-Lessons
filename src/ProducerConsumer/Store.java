@@ -26,10 +26,12 @@ public class Store {
 
     public void addItems(Object item) {
         items.add(item);
+        System.out.println("Item added by Producer. Shelf size: " + items.size());
     }
 
     public void removeItems() {
         items.remove(items.size() - 1);
+        System.out.println("Item removed by Consumer. Shelf size: " + items.size());
     }
 
     public boolean canAddInStore() {
@@ -38,5 +40,9 @@ public class Store {
 
     public boolean canRemoveFromStore() {
         return !items.isEmpty();
+    }
+
+    public void printItemSize() {
+        System.out.println("Shelf size: " + items.size());
     }
 }
