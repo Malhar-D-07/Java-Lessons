@@ -46,6 +46,7 @@ public class StudentBuilder {
         return this;
     }
 
+    // The build method returns the Student object
     public Student build() {
         if(this.psp > 100) {
             throw new RuntimeException();
