@@ -15,8 +15,17 @@ public class NestedOuterClass {
         System.out.println("Sum = " + res);
     }
 
+    //NOTE: We can also create an inner class object from outer class
+    public void createInnerClass() {
+        NestedInnerClass inner = new NestedInnerClass("Deshpande");
+        System.out.println(inner.getSurname());
+    }
     class NestedInnerClass {
         private String surname;
+
+        public String getSurname() {
+            return surname;
+        }
         NestedInnerClass(String sName) {
             this.surname = sName;
         }
